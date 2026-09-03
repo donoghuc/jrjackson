@@ -10,9 +10,9 @@ Gem::Specification.new do |s|
   s.date        = JrJackson::BuildInfo.release_date
   # need java platform for jar-dependencies to work
   s.platform    = 'java'
-  s.authors     = ['Guy Boertje']
-  s.email       = ['guyboertje@gmail.com']
-  s.homepage    = "http://github.com/guyboertje/jrjackson"
+  s.authors     = ['Elastic', 'Guy Boertje']
+  s.email       = ['rubygems@elastic.co']
+  s.homepage    = "http://github.com/elastic/jrjackson"
   s.summary     = %q{A JRuby wrapper for the java jackson json processor jar}
   s.description = %q{A mostly native JRuby wrapper for the java jackson json processor jar}
   s.license     = 'Apache-2.0'
