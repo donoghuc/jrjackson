@@ -1,53 +1,53 @@
-v0.5.2
+## 0.5.2
   Fix packaging so the generated lib/jrjackson_jars.rb is included in the gem
   List generated files explicitly instead of using Dir.glob so they are packaged even when generated after the gemspec is evaluated
   Add a build step that fails when a file listed in the gemspec is missing
 
-v0.5.1
+## 0.5.1
   Upgrade jackson and jackson-databind to v2.21.4
 
-v0.5.0
+## 0.5.0
   Upgrade jackson and jackson-databind to v2.21.2
   Require JRuby 9.4.14.0 and Java 11 toolchain for builds
   Drop legacy Gson benchmarks and dependency
   Add bigdecimal as a runtime dependency for JRuby 10 / Ruby 3.4+ compatibility
   Add GitHub Actions CI workflow
 
-v0.4.20
+## 0.4.20
   fix: don't assume ruby strings are valid utf-8
 
-v0.4.19
+## 0.4.19
   Upgrade jackson and jackson-databind to v2.15.4
   Build using JRuby 9.4.7.0 and Junit 4.13.2
   Update development gems such as json 2.x
   Remove dependency on git ls-files in gemspec
   Remove unnecessary content from gem such as .java files and tests
 
-v0.4.18
+## 0.4.18
   Upgrade jackson and jackson-databind to v2.15.2
 
-v0.4.17
+## 0.4.17
   Bump jackson and jackson-databind to v2.14.1
 
-v0.4.16
+## 0.4.16
   Publish v0.4.15 again without world writable files
 
-v0.4.15
+## 0.4.15
   Bump jackson and jackson-databind to v2.13.3
 
-v0.4.14
+## 0.4.14
   Bump jackson-databind to v2.9.10.8
 
-v0.4.13
+## 0.4.13
   Bump jackson-databind to v2.9.10.6
 
-v0.4.12
+## 0.4.12
   Bump jackson-databind to v2.9.10.4
 
-v0.4.11
+## 0.4.11
   Bump Jackson to v2.9.10, and jackson-databind to v2.9.10.1
 
-v0.4.10
+## 0.4.10
   fix concurrency issue when serializing dates.
   Cache UTC TimeZone class to avoid unnecessary calls to synchronized method
   Use a ThreadLocal to hold per-thread instances of SimpleDateFormat to avoid
@@ -55,28 +55,28 @@ v0.4.10
   Replace unsafe call to setDateFormat on static ObjectMapper class by creating
    an amended SerializationConfig
 
-v0.4.9
+## 0.4.9
   bump Jackson to v2.9.9, and jackson-databind to v2.9.9.3
 
-v0.4.8
+## 0.4.8
   fix serialisation of big numbers as Ruby 2.4 unifies Fixnum and Bignum into Integer
 
-v0.4.4
+## 0.4.4
   fix for issue 64
     Ruby parse() null/nil handling
 
-v0.4.3
+## 0.4.3
   bump Jackson to v2.9.1
   make static_mapper public
 
-v0.4.1
+## 0.4.1
   fix for issue 55
     Refactor AnySerializer acceptable class detection that does not use an exception
 
-v0.4.0
+## 0.4.0
   Implement `to_s` and Exception serialization
 
-v0.3.9
+## 0.3.9
   Thanks to mkristian, now uses jar_dependencies
     Upgrade to Jackson v2.7.1
   fix for issue 51
@@ -84,38 +84,38 @@ v0.3.9
   fix for reports of symbol table overflow in Jackson when using JrJackson in very long running daemons (Logstash)
     disable the FAIL_ON_SYMBOL_HASH_OVERFLOW setting
 
-v0.3.8
+## 0.3.8
   fix for issue 47
     Update Jackson to v 2.6.3
   Change error message to better report failure in issue 46
 
-v0.3.7
+## 0.3.7
   fix for issue 46
     Add references to RubyAnySerializer so Jackson can
     use it for Ruby objects nested in Java objects
 
-v0.3.6
+## 0.3.6
   fix for issue 45
     use bytelist.begin instead of 0 generating from RubyString
 
-v0.3.5
+## 0.3.5
   give highest precedence to the to_json_data method
 
-v0.3.4
+## 0.3.4
   fix multi_json bug
     not serializing non-string keys
 
-v0.3.3
+## 0.3.3
   fix bigdecimal bug
     add require bigdecimal
 
-v0.3.2
+## 0.3.2
   update changelog
 
-v0.3.1
+## 0.3.1
   remove old jar
 
-v0.3.0
+## 0.3.0
   this is a major refactor.
   parse and generate performance improvements.
     see JrJackson::Ruby and JrJackson::Java modules
@@ -123,11 +123,11 @@ v0.3.0
   jruby 9.0.1.0 and 1.7.22
   jackson 2.6.1
 
-v0.2.9
+## 0.2.9
   fix for issue 39
     incorrect error when serializing BasicObject
 
-v0.2.8
+## 0.2.8
   fixes for issues-28,29,31
     correction for Time#to_s
     new options to control date serialization
@@ -136,12 +136,12 @@ v0.2.8
   jruby 1.7.17
   jackson 2.4.4
 
-v0.2.7
+## 0.2.7
   fixes for issues-23,24
     add to_time as option for serializing Time like objects
   jar compiled for jruby 1.7.11
 
-v0.2.6
+## 0.2.6
   fix issue-20
     allow jruby to convert Ruby StringIO into Java
     by not type checking passed arg
@@ -150,7 +150,7 @@ v0.2.6
   jruby 1.7.8, jruby 1.7.9 (tested)
   jackson 2.3.0
 
-v0.2.5
+## 0.2.5
   fix issue-16
     reduce the gem size by:
       change pom.xml to only include relevant java jars
@@ -158,7 +158,7 @@ v0.2.5
   jruby 1.7.5
   jackson 2.2.3
 
-v0.2.4
+## 0.2.4
   fix issue-15
     return Ruby nil instead of Java null
   fix issue-14
@@ -167,7 +167,7 @@ v0.2.4
   jruby 1.7.5
   jackson 2.2.3
 
-v0.2.3
+## 0.2.3
   fix issue-12
     improve the serialization support for non Json Datatype Ruby objects
     now has support for serializing via toJava, to_h, to_hash, to_a, to_json
@@ -175,21 +175,21 @@ v0.2.3
   jruby 1.7.4
   jackson 2.2.3
 
-v0.2.2
+## 0.2.2
   fix issue-13
     compile Java for 1.6 compatibility
   documentation tweaks
   jruby 1.7.4
   jackson 2.2.3
 
-v0.2.1
+## 0.2.1
   documentation tweaks
   fix issue-7
     add pluggable String and Symbol Converters for JSON values
   jruby 1.7.4
   jackson 2.2.3
 
-v0.2.0
+## 0.2.0
   extract all Java -> Ruby generation to reusable RubyUtils static class
   support BigDecimal
   remove JSON Api
@@ -198,12 +198,14 @@ v0.2.0
   jruby 1.7.3
   jackson 2.2.2
 
-v0.1.1
+## 0.1.1
   fix Time regex
-v0.1.0
+
+## 0.1.0
   MutiJson compatibility
   switch to using almost all Java, i.e. define most of the ruby modules in Java
   jruby 1.7.3
   jackson 2.1.4
-v0.0.7
+
+## 0.0.7
   first release - minimal jruby wrapper around jackson 1.9.5 jars
