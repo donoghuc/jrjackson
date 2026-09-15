@@ -1,4 +1,6 @@
-
+> **Note:** This is the Elastic-maintained fork of jrjackson. The `jrjackson`
+> gem is now published from [elastic/jrjackson](https://github.com/elastic/jrjackson).
+> The original repository is [guyboertje/jrjackson](https://github.com/guyboertje/jrjackson).
 
 LICENSE applicable to this library:
 
