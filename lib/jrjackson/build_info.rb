@@ -13,7 +13,7 @@ module JrJackson
     end
 
     def self.jackson_version
-      '2.21.4'
+      '2.21.6'
     end
 
     def self.jackson_annotations_version
@@ -21,7 +21,7 @@ module JrJackson
     end
 
     def self.jackson_databind_version
-      '2.21.4'
+      '2.21.6'
     end
 
     def self.jar_version
