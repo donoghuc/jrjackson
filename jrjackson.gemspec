@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   # need java platform for jar-dependencies to work
   s.platform    = 'java'
   s.authors     = ['Elastic', 'Guy Boertje']
-  s.email       = ['rubygems@elastic.co']
+  s.email       = ['info@elastic.co']
   s.homepage    = "http://github.com/elastic/jrjackson"
   s.summary     = %q{A JRuby wrapper for the java jackson json processor jar}
   s.description = %q{A mostly native JRuby wrapper for the java jackson json processor jar}
