@@ -49,3 +49,24 @@ Gem::PackageTask.new( eval File.read( 'jrjackson.gemspec' ) ) do
   desc 'Pack gem'
   task :package => [:compile]
 end
+
+# The logstash-plugins/publisher action runs `rake vendor`. For jrjackson that
+# means the Maven build that generates the jar and lib/jrjackson_jars.rb, which
+# compile already does (and which runs verify_generated_files).
+desc "Build native artifacts (alias of compile, used by the publisher action)"
+task :vendor => :compile
+
+# The publisher action runs `rake publish_gem`. Build through :package so the gem
+# is compiled and verify_generated_files runs before we push. Uses the exact
+# version filename, not a glob, so a stale pkg/ gem cannot be pushed by mistake.
+desc "Build the gem, push to RubyGems, then tag the repo"
+task :publish_gem => :package do
+  $LOAD_PATH.unshift(File.expand_path('lib', __dir__))
+  require 'jrjackson/build_info'
+  version = JrJackson::BuildInfo.version
+  gem_file = "pkg/jrjackson-#{version}-java.gem"
+  raise "Built gem #{gem_file} not found" unless File.file?(gem_file)
+  sh "gem push #{gem_file}"
+  sh "git tag v#{version}"
+  sh "git push origin v#{version}"
+end
